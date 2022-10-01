@@ -7,18 +7,17 @@ public class HomeWork220926 {
         System.out.println(first % second);
     }
 
-    static double getDivision(float first, float second) {
+    private static double getDivision(float first, float second) {
         return first / second;
     }
 
-    static float getIntegerDivision(int first, int second) {
+    private static float getIntegerDivision(int first, int second) {
         return first / second;
     }
 
-    static int showSquaring(int base) {
+    private static int showSquaring(int base) {
         return base * base;
     }
-
 
     public static void main(String[] args) {
         showResult(2.4, 5.7, 3.8, 4);
