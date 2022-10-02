@@ -27,6 +27,10 @@ public class Lesson220928 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println(get(scanner.nextInt()));
+        int a = scanner.nextInt();
+        System.out.println(get(a));
+        String str = scanner.next();
+
+        System.out.println(str);
     }
 }
