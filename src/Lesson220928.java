@@ -32,5 +32,6 @@ public class Lesson220928 {
         String str = scanner.next();
 
         System.out.println(str);
+
     }
 }
