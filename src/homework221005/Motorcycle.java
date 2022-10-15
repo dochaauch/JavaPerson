@@ -38,7 +38,7 @@ class Main {
         ktm.GoesAsKtm();
         ktm.GoesAsMotorcycle();
         ktm.GoesAsEnduro();
-        //Ktm ktm1 = (Motorcycle) obj;
+
 
     }
 

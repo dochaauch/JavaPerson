@@ -3,16 +3,16 @@ package taskHome221010;
 public class Employee {
     String name;
     String surname;
-    private static String taxRate;
-    private static String socialRate;
-    private static double salary;
+    protected String taxRate;
+    protected String socialRate;
+    protected double salary;
 
     public Employee(String name, String surname) {
         this.name = name;
         this.surname = surname;
     }
 
-    public static double CalculateTax(double salary, String taxRate, String socialRate) {
+    public double CalculateTax(double salary, String taxRate, String socialRate) {
         int tR = Integer.parseInt(taxRate.split("%")[0]);
         int sR = Integer.parseInt(socialRate.split("%")[0]);
         return (salary * tR / 100) + (salary * sR / 100);
@@ -20,18 +20,18 @@ public class Employee {
 }
 
 class ResidentEmployee extends Employee {
-    private static String taxRate = "15%";
-    private static String socialRate = "10%";
+    private String taxRate = "15%";
+    private String socialRate = "10%";
 
     public ResidentEmployee(String name, String surname) {
         super(name, surname);
     }
 
-    public static String getTaxRate() {
+    public String getTaxRate() {
         return taxRate;
     }
 
-    public static String getSocialRate() {
+    public String getSocialRate() {
         return socialRate;
     }
 
@@ -113,5 +113,7 @@ class Main {
         double taxesSidorov = conMSidorov.CalculateTax(1000, conMSidorov.getTaxRate(), conMSidorov.getSocialRate());
         System.out.println(conMSidorov);
         System.out.println("Сумма налогов: " + taxesSidorov);
+        ResidentEmployee resII = new ResidentEmployee("Igor", "Virr");
+        double taxesVirr = resII.CalculateTax(5000, resAIvanov.getTaxRate(), resAIvanov.getSocialRate());
     }
 }
