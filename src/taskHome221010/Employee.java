@@ -1,5 +1,7 @@
 package taskHome221010;
 
+import java.util.Arrays;
+
 public class Employee {
     String name;
     String surname;
@@ -89,6 +91,10 @@ class Contractor extends Employee {
         return socialRate;
     }
 
+    public void getTaxInfo() {
+        System.out.println("Налоги оплачиваются сотрудником");
+    }
+
     @Override
     public String toString() {
         return "Contractor{" +
@@ -105,15 +111,27 @@ class Main {
         double taxesIvanov = resAIvanov.CalculateTax(1000, resAIvanov.getTaxRate(), resAIvanov.getSocialRate());
         System.out.println(resAIvanov);
         System.out.println("Сумма налогов: " + taxesIvanov);
+
         NoResidentEmployee noResIVassiljev = new NoResidentEmployee("Igor", "Vassiljev");
         double taxesVassiljev = noResIVassiljev.CalculateTax(1000, noResIVassiljev.getTaxRate(), noResIVassiljev.getSocialRate());
         System.out.println(noResIVassiljev);
         System.out.println("Сумма налогов: " + taxesVassiljev);
+
         Contractor conMSidorov = new Contractor("Mihhail", "Sidorov");
         double taxesSidorov = conMSidorov.CalculateTax(1000, conMSidorov.getTaxRate(), conMSidorov.getSocialRate());
         System.out.println(conMSidorov);
         System.out.println("Сумма налогов: " + taxesSidorov);
+
         ResidentEmployee resII = new ResidentEmployee("Igor", "Virr");
-        double taxesVirr = resII.CalculateTax(5000, resAIvanov.getTaxRate(), resAIvanov.getSocialRate());
+        double taxesVirr = resII.CalculateTax(5000, resII.getTaxRate(), resII.getSocialRate());
+        System.out.println(conMSidorov);
+        System.out.println("Сумма налогов: " + taxesVirr);
+
+        //Employee[] employees = {(ResidentEmployee) resAIvanov, (NoResidentEmployee) noResIVassiljev, (Contractor) conMSidorov, (ResidentEmployee)  resII};
+        //Employee[] employees = {(Employee) resAIvanov, (Employee) noResIVassiljev, (Employee) conMSidorov, (Employee)  resII};
+        Employee[] employees = {new ResidentEmployee("Vladimir", "Solnyshko"), new Contractor("Ilja", "Muromets")};
+        for (Employee employee : employees) {
+            System.out.println(employee.name);
+        };
     }
 }
