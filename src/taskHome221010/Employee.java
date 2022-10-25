@@ -105,7 +105,7 @@ class Contractor extends Employee {
 }
 
 
-class Main {
+class Main1 {
     public static void main(String[] args) {
         ResidentEmployee resAIvanov = new ResidentEmployee("Aleksandr", "Ivanov");
         double taxesIvanov = resAIvanov.CalculateTax(1000, resAIvanov.getTaxRate(), resAIvanov.getSocialRate());
@@ -124,12 +124,12 @@ class Main {
 
         ResidentEmployee resII = new ResidentEmployee("Igor", "Virr");
         double taxesVirr = resII.CalculateTax(5000, resII.getTaxRate(), resII.getSocialRate());
-        System.out.println(conMSidorov);
+        System.out.println(resII);
         System.out.println("Сумма налогов: " + taxesVirr);
 
-        //Employee[] employees = {(ResidentEmployee) resAIvanov, (NoResidentEmployee) noResIVassiljev, (Contractor) conMSidorov, (ResidentEmployee)  resII};
+        Employee[] employees = {(ResidentEmployee) resAIvanov, (NoResidentEmployee) noResIVassiljev, (Contractor) conMSidorov, (ResidentEmployee)  resII};
         //Employee[] employees = {(Employee) resAIvanov, (Employee) noResIVassiljev, (Employee) conMSidorov, (Employee)  resII};
-        Employee[] employees = {new ResidentEmployee("Vladimir", "Solnyshko"), new Contractor("Ilja", "Muromets")};
+//        Employee[] employees = {new ResidentEmployee("Vladimir", "Solnyshko"), new Contractor("Ilja", "Muromets")};
         for (Employee employee : employees) {
             System.out.println(employee.name);
         };
