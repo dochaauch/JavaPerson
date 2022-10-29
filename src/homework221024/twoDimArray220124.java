@@ -66,26 +66,26 @@ public class twoDimArray220124 {
                 startPosCol = startPosCol+1;
             }
 
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                temp = String.valueOf(array[i][j]).length();
-                if (temp > maxLength) {
-                    maxLength = temp;
-                }
-            }
-        }
+         for (int i = 0; i < array.length; i++) {
+             for (int j = 0; j < array[i].length; j++) {
+                 temp = String.valueOf(array[i][j]).length();
+                 if (temp > maxLength) {
+                     maxLength = temp;
+                 }
+             }
+         }
 
-        format = "%" + maxLength + "d\t";
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                System.out.printf(format, array[i][j]);
-            }
-            System.out.println();
-        }
+         format = "%" + maxLength + "d\t";
+         for (int i = 0; i < array.length; i++) {
+             for (int j = 0; j < array[i].length; j++) {
+                 System.out.printf(format, array[i][j]);
+             }
+             System.out.println();
+         }
         return array;
     }
 
     public static void main(String[] args) {
-        get(15, 30);
+        get(10, 20);
     }
 }
