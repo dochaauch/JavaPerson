@@ -56,13 +56,13 @@ address в классе Order. Во всех примерах выше, где �
 public class OnlineShop2 {
     static abstract class Order {
         protected String productName;
-        protected Double valueOfOrder;
+        protected float valueOfOrder;
         protected int deliveryTime;
         protected Address deliveryAddress;
 
-
-
-        public Order(String productName, Double valueOfOrder) {
+        public Order(String productName, float valueOfOrder){
+//                     String country,
+//                     String city, String street, String house, String apartment) {
             this.productName = productName;
 //            this.deliveryAddress = new Address(country, city, street, house, apartment);
             this.valueOfOrder = valueOfOrder;
@@ -73,12 +73,19 @@ public class OnlineShop2 {
         }
 
         public abstract double getPriceWithDelivery();
+
+        public void printDataOrder() {
+            System.out.println(this);
+            System.out.println(this.getDeliveryDays());
+            System.out.println(this.getPriceWithDelivery());
+            System.out.println();
+        }
     }
 
     static class SimpleOrder extends Order {
         //protected int deliveryTime = 5;
 
-        public SimpleOrder(String productName, Double valueOfOrder, String country, String city, String street, String house, String apartment) {
+        public SimpleOrder(String productName, float valueOfOrder, String country, String city, String street, String house, String apartment) {
             super(productName, valueOfOrder);
             this.deliveryAddress = new Address(country, city, street, house, apartment);
             this.deliveryTime = 5;
@@ -106,7 +113,7 @@ public class OnlineShop2 {
     static class PrimeOrder extends Order {
         //private int deliveryTime = 3;
 
-        public PrimeOrder(String productName, Double valueOfOrder, String country, String city, String street, String house, String apartment) {
+        public PrimeOrder(String productName, float valueOfOrder, String country, String city, String street, String house, String apartment) {
             super(productName, valueOfOrder);
             this.deliveryAddress = new Address(country, city, street, house, apartment);
             this.deliveryTime = 3;
@@ -159,24 +166,17 @@ public class OnlineShop2 {
     }
 
     public static void main (String[]args){
-        PrimeOrder primeOrder01 = new PrimeOrder("iPhone", 1543.00, "Germany",
+        PrimeOrder primeOrder01 = new PrimeOrder("iPhone", 1543.00f, "Germany",
                 "Frankfurt", "Krisbi", "3a", "1b");
-        System.out.println(primeOrder01);
-        System.out.println(primeOrder01.getDeliveryDays());
-        System.out.println(primeOrder01.getPriceWithDelivery());
-        System.out.println();
-        SimpleOrder simpleOrder01 = new SimpleOrder("case for iPhone", 25.00, "Estonia",
+        primeOrder01.printDataOrder();
+
+        SimpleOrder simpleOrder01 = new SimpleOrder("case for iPhone", 25.00f, "Estonia",
                 "Tallinn", "Oismae", "59", "50");
-        System.out.println(simpleOrder01);
-        System.out.println(simpleOrder01.getDeliveryDays());
-        System.out.println(simpleOrder01.getPriceWithDelivery());
-        System.out.println();
-        PrimeOrder primeOrder02 = new PrimeOrder("iPAD", 700.00, "Germany",
+        simpleOrder01.printDataOrder();
+
+        PrimeOrder primeOrder02 = new PrimeOrder("iPAD", 700.00f, "Germany",
                 "Frankfurt", "Krisbi", "3a", "1b");
-        System.out.println(primeOrder02);
-        System.out.println(primeOrder02.getDeliveryDays());
-        System.out.println(primeOrder02.getPriceWithDelivery());
-        System.out.println();
+        primeOrder02.printDataOrder();
 
         Order[] ourOrders = {primeOrder01, simpleOrder01, primeOrder02};
         double sumOrder = 0.00;
@@ -185,11 +185,9 @@ public class OnlineShop2 {
         }
         System.out.println("Сумма заказа вместе с доставкой " + sumOrder);
         System.out.println();
+
         for (int i = 0; i < ourOrders.length; i++) {
-            System.out.println(ourOrders[i]);
-            System.out.println(ourOrders[i].getDeliveryDays());
-            System.out.println(ourOrders[i].getPriceWithDelivery());
-            System.out.println();
+            ourOrders[i].printDataOrder();
         }
 
         for (Order order : ourOrders) {
@@ -199,6 +197,10 @@ public class OnlineShop2 {
             } else {
                 ((PrimeOrder) order).getType();
             }
+        }
+
+        for (Order order: ourOrders) {
+            System.out.println(order.deliveryAddress.city);
         }
     }
 }
