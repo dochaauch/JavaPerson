@@ -179,7 +179,7 @@ public class OnlineShop2 {
         primeOrder02.printDataOrder();
 
         Order[] ourOrders = {primeOrder01, simpleOrder01, primeOrder02};
-        double sumOrder = 0.00;
+        float sumOrder = 0.00f;
         for (Order ourOrder: ourOrders) {
             sumOrder += ourOrder.getPriceWithDelivery();
         }
