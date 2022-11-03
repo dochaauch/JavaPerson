@@ -1,4 +1,4 @@
-package Lesson221005.animal;
+package lesson221005.animal;
 
 import java.util.ArrayList;
 

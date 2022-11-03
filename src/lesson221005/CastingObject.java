@@ -1,4 +1,4 @@
-package Lesson221005;
+package lesson221005;
 
 public class CastingObject {
     int i;

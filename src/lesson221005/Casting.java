@@ -1,6 +1,4 @@
-package Lesson221005;
-
-import java.util.Scanner;
+package lesson221005;
 
 public class Casting {
     static byte b = (byte) 200;
