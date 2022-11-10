@@ -199,6 +199,16 @@ public class OnlineShop2 {
             }
         }
 
+        for (Order order : ourOrders) {
+            System.out.println(order);
+            if(order.getClass().equals(SimpleOrder.class)){
+                ((SimpleOrder) order).getType();
+            } else {
+                ((PrimeOrder) order).getType();
+            }
+        }
+
+
         for (Order order: ourOrders) {
             System.out.println(order.deliveryAddress.city);
         }

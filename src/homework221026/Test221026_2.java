@@ -1,4 +1,4 @@
-package lesson221026;
+package homework221026;
 
 public class Test221026_2 {
     public int[][] createArray(int length, int width) {
@@ -164,5 +164,6 @@ public class Test221026_2 {
         int[][] array2 = test221026_2.createArray(1, 1);
         int[][] array3 = test221026_2.createArray(3, 1);
         int[][] array4 = test221026_2.createArray(1, 3);
+        int[][] array5 = test221026_2.createArray(15, 8);
     }
 }
