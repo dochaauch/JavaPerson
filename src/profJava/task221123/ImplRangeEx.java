@@ -5,9 +5,19 @@ import java.util.NoSuchElementException;
 
 public class ImplRangeEx {
     public static void main(String[] args) {
-        for (int i : Range.fromTo(0, 99)) {
-            System.out.println(i);
+//        for (int i : Range.fromTo(0, 99)) {
+//            System.out.println(i);
+//        }
+        Iterator<Integer> i1 = Range.fromTo(1, 10).iterator();
+        Iterator<Integer> i2 = Range.fromTo(10, 21).iterator();
+        System.out.println(i1);
+        System.out.println(i2);
+        while (i1.hasNext()) {
+            Integer res1 = i1.next();
+            Integer res2 =i2.next();
+            System.out.println(String.format("iterator1: %d iterator2: %d", res1, res2));
         }
+
 
     }
     public static class Range implements Iterable<Integer> {

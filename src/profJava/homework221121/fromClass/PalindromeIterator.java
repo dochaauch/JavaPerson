@@ -10,7 +10,6 @@ import java.util.Objects;
 
 public class PalindromeIterator {
 
-
     public static void main(String[] args) {
         String s = "а роза упала на лапу Азора";
         System.out.println(isPalindrome(s));
