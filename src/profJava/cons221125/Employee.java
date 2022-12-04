@@ -1,6 +1,8 @@
 package profJava.cons221125;
 
+import lombok.Getter;
 
+@Getter
 public class Employee implements Comparable<Employee> {
     private String name;
     private String secondName;
@@ -17,26 +19,6 @@ public class Employee implements Comparable<Employee> {
         this.yearStarted = yearStarted;
         this.experience = experience;
         this.eType = eType;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getSecondName() {
-        return secondName;
-    }
-
-    public Integer getYear() {
-        return yearStarted;
-    }
-
-    public Double getExperience() {
-        return experience;
-    }
-
-    public Integer getSalaryEuro() {
-        return salaryEuro;
     }
 
     @Override

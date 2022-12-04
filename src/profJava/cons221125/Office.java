@@ -1,7 +1,6 @@
 package profJava.cons221125;
 
 import java.util.*;
-import java.util.function.Consumer;
 
 //Class type Singletone
 public class Office implements Iterable<Employee>{
@@ -22,12 +21,30 @@ public class Office implements Iterable<Employee>{
         }
     }
 
+    public class PositionNameComporator implements Comparator<Employee> {
+        @Override
+        public int compare(Employee o1, Employee o2) {
+            int res = o1.getEType().getValue() - o2.getEType().getValue();
+            if (res == 0){
+                res = o1.getSecondName().compareTo(o2.getSecondName());
+                    if (res == 0){
+                        res = o1.getName().compareTo(o2.getName());
+                    }
+            }
+            return res;
+        }
+    }
+
     public void sortByExp(){//логика как бы не относится к офису
         employees.sort(new ExperComparator());
     }
 
     public void sortBySalary() {
         employees.sort(new SalaryComparator());
+    }
+
+    public void sortByPosAndName(){
+        employees.sort(new PositionNameComporator());
     }
 
     public class EmployeeIterator implements Iterator<Employee> {

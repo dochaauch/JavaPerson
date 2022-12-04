@@ -1,12 +1,5 @@
 package algorithm.home221124;
-/*
 
-
-
-
-
-
-*/
 public class home221124 {
     public static void main(String[] args) {
         home221124 home221124 = new home221124();
