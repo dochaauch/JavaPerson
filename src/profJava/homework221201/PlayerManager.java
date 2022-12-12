@@ -12,6 +12,7 @@ import java.util.*;
 
 public class PlayerManager implements Iterable<Player> {
     static PlayerManager pm = null; //singleton
+    //тут сделаем map
     private List<Player> allPlayers = new ArrayList<>(); //или можно объявить в конструкторе
 
     private PlayerManager() {

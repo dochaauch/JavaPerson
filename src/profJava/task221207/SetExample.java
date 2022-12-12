@@ -28,7 +28,16 @@ public class SetExample {
 
         System.out.println(boxes);
 
-        Map<String, String> map = new HashMap<>();
+        //Map<String, String> map = new HashMap<>();
+        //Map<String, String> map = new LinkedHashMap<>();
+        Map<String, String> map = new TreeMap<>(new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o1.length() - o2.length();
+            }
+        });
+
+
 
         map.put("One", "January");
         map.put("Two", "February");
