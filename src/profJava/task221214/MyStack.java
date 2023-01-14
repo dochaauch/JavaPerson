@@ -1,4 +1,4 @@
-package task221214;
+package profJava.task221214;
 
 public interface MyStack<T> {
     T push(T el);

@@ -10,7 +10,55 @@ import java.util.Arrays;
 Вывод : 256
 Окончательный отсортированный массив -
 72, 86, 100, 112, 113, 119, 256, 265, 349, 445, 770, 892
-7-й элемент этого массива равен 256.*/
+7-й элемент этого массива равен 256.
+
+
+***Naive approach
+1. unite arrays into one => O(n) n-sum of lengths of array
+2. sort result array // merge sort O(n log n)
+3. take k-1 element // O(1)
+
+A = [1,4,5], B=[3,7,8], k = 3
+1. R = [1,4,5,3,7,8], k = 3
+2. R = [1,3,4,5,7,8]
+3. return R[k-1]
+
+-time complexity O(n log n) =>  берем максимальную
+-space complexity O(n) n-sum of lengths of array
+
+
+***Merge approach
+1. Merge sorted arrays
+2. Take k-1 element
+A = [1,4,5], B=[3,7,8], k = 3
+1. R = [1,3,4,5,7,8]
+2. return R[2] => O(1)
+-time complexity O(n) n-sum of lengths of array
+-space complexity O(n) n-sum of lengths of array
+
+***K-limited merge approach
+1.Merge sorted arrays until k
+2.Take the last element
+A = [1,4,5], B=[3,7,8], k = 3
+1.R=[1,3,4]
+2.return R[2]
+-time complexity O(k) (worst case O(n))
+-space complexity O(k) (worst case O(n))
+
+***K-limited approach
+1.Count 'merged' items until k
+2.count==k, return element
+A = [1,4,5], B=[3,7,8], k = 3
+1. count = 0, while (count<k) compare the minimum in each array
+2. count=k-1, return the current minimum
+-time complexity O(k) (worst case O(n))
+-space complexity O(1)
+
+Summary
+-time complexity O(n log n) => O(k) (worst case O(n))
+-space complexity O(n) n-sum of lengths of array => space complexity O(1)
+
+*/
 public class Task02 {
     public static void main(String[] args) {
         int[] arr1 = {100, 112, 256, 349, 770};

@@ -16,6 +16,10 @@ note
 2 Пиковый элемент не обязательно является максимальным элементом.
 3 Таких элементов может быть несколько.
 4 Всегда есть пиковый элемент.
+
+//method brute force: iterate over all elements and compare O(n^2)
+
+//binary search: we can find the maximum in column
 */
 public class Task04 {
 }

@@ -1,4 +1,4 @@
-package task221214;
+package profJava.task221214;
 
 //public class MyPriorityQueueImpl<T> implements MyPriorityQueue<T> {
 //    List<T> list = new LinkedList<>();
