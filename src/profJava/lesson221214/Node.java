@@ -26,9 +26,19 @@ public class Node {
         }
     }
 
-    //todo
+    //todo ++
     private static Node search(Node node, int value){
-        return null;
+        if(!isNodeExist(node)) {
+            return null;
+        }
+        if(node.value == value) {
+            return node;
+        }
+        else if (value < node.value) {
+            return search(node.left, value);
+        } else {
+            return search(node.right, value);
+        }
     }
 
     private static Node getMin(Node node) {
@@ -61,22 +71,43 @@ public class Node {
     }
 
 
+    //++
     private static void postOrderTraversal(Node node){
-
+        if(!isNodeExist(node)) {
+            return;
+        }
+        postOrderTraversal(node.left);
+        postOrderTraversal(node.right);
+        System.out.println("[ " + node + " ]");
     }
 
+    //++
     private static void directOrderTraversal(Node node){
-
+        if(!isNodeExist(node)) {
+            return;
+        }
+        System.out.println("[ " + node + " ]");
+        directOrderTraversal(node.left);
+        directOrderTraversal(node.right);
     }
 
 
-    // todo class
-    private static void moveNode(Node toNode, Node fromNode){
-
+    // todo class ++
+    private static void moveNode(Node toNode, Node fromNode) {
+        toNode.value = fromNode.value;
+        toNode.left = fromNode.left;
+        toNode.right = fromNode.right;
     }
 
-    // todo class
+    // todo class++
     private static int getChildrenCount(Node node) {
-        return 0;
+        int count = 0;
+        if (isNodeExist(node.left)) {
+            count++;
+        }
+        if (isNodeExist(node.right)) {
+            count++;
+        }
+        return count;
     }
 }
