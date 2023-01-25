@@ -5,7 +5,9 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.util.Stack;
-
+/*First level: 1. Реализовать метод search() у написанного на занятии стека MyStack (см. код в репозитории).
+public int search(int element) -  определяет, существует ли объект в стеке.
+Если элемент найден, возвращает позицию элемента с вершины стека. В противном случае он возвращает -1.*/
 @Getter
 @Setter
 @ToString
@@ -35,6 +37,15 @@ public class MyStack {
         return array[count-1];
     }
 
+    public int search(int element) {
+        for (int i = count - 1; i >= 0; i--) {
+            if (array[i] == element) {
+                return count - i;
+            }
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
 //        MyStack myStack = new MyStack(5);
 //        myStack.push(1);
@@ -58,6 +69,8 @@ public class MyStack {
         System.out.println(stack);
         stack.pop();
         stack.forEach(System.out::println);
+        System.out.println(stack.search("One"));
+        System.out.println(stack.search(5));
     }
 
 
