@@ -4,7 +4,6 @@ import lombok.*;
 
 @Getter
 @Setter
-
 @ToString
 public class BusinessCardContact {
     private String fullName;
@@ -48,12 +47,18 @@ class Web{
 
 @Getter
 @Setter
-@Builder
+
 @ToString
 class Address{
     private Type type;
     private String street;
     private String city;
     private String country;
+
+    public Address() {
+        this.street = null;
+        this.city = null;
+        this.country = null;
+    }
 }
 

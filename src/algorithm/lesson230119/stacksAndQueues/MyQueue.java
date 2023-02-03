@@ -86,8 +86,5 @@ public class MyQueue {
         //myQueue.pushToEnd(5);
 
         System.out.println(myQueue.peek());
-
     }
-
-
 }
