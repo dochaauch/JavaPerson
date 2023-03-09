@@ -34,8 +34,10 @@ public class Test {
     public static void main(String[] args) {
         int[] arr1 = {1,2,3,4,5};
         int[] arr2 = {5,6,8,9};
+        int[] arr3 = {1,2,3,4,5,6,7,8,9};
         int k = 3;
         System.out.println(Arrays.toString(reverse(arr1, k)));
         System.out.println(Arrays.toString(reverse(arr2, k)));
+        System.out.println(Arrays.toString(reverse(arr3, k)));
     }
 }

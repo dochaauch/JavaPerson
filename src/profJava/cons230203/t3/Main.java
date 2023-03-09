@@ -13,5 +13,6 @@ public class Main {
         //System.out.println(Generator.createLibrary());
         LibrarySerializer ls = new LibrarySerializer();
         ls.writeToFile(Generator.createLibrary());
+        ls.writeWithGson(Generator.createLibrary());
     }
 }
