@@ -49,7 +49,10 @@ public class Main {
         var listQ = query1.getResultList();
         System.out.println(listQ);
 
-        var query2 = sessionQ.createQuery("select from Order join Buyer");
+        var query2 = sessionQ.createQuery("SELECT b.name, o.description FROM Buyer b " +
+                "JOIN b.orders o WHERE b.id = 1");
+        var listQ2 = query2.getResultList();
+        System.out.println(listQ2);
 
     }
 }

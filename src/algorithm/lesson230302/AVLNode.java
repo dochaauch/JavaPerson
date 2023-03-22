@@ -1,16 +1,9 @@
 package algorithm.lesson230302;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
 public class AVLNode<T> {
-    @Setter
+
     private AVLNode<T> left;
-    @Setter
     private AVLNode<T> right;
-    private int balance;
-    @Setter
     private int height;
     private int key;
     private T data;
@@ -19,4 +12,46 @@ public class AVLNode<T> {
         this.key = key;
         this.data = data;
     }
+
+    public void setLeft(AVLNode<T> left) {
+        this.left = left;
+    }
+
+    public void setRight(AVLNode<T> right) {
+        this.right = right;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public AVLNode<T> getLeft() {
+        return left;
+    }
+
+    public AVLNode<T> getRight() {
+        return right;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getKey() {
+        return key;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    @Override
+    public String toString() {
+        return "AVLNode{" +
+                "height=" + height +
+                ", key=" + key +
+                ", data=" + data +
+                '}';
+    }
 }
+
